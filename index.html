@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CUTTING DIAMOND | Free Fire Top-Up</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #090909;
+    --card: #171717;
+    --red: #ff2424;
+    --text: #ffffff;
+    --muted: #bdbdbd;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #111;
+    padding: 18px 12px;
+    text-align: center;
+    border-bottom: 2px solid var(--red);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 7px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    background: #141414;
+}
+
+button, .nav-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .85;
+}
+
+.nav-btn {
+    background: #292929;
+}
+
+.hero {
+    padding: 35px 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #260000, #101010, #350000);
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.section {
+    padding: 25px 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 23px;
+    border-left: 4px solid var(--red);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 17px 10px;
+    text-align: center;
+}
+
+.card .diamond {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 9px;
+}
+
+.price {
+    color: #ff4545;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badge {
+    display: inline-block;
+    background: #450000;
+    color: #ff6868;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.offer {
+    border: 1px solid var(--red);
+    background: linear-gradient(145deg, #260000, #171717);
+}
+
+form {
+    background: var(--card);
+    border: 1px solid #333;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+input, select {
+    width: 100%;
+    background: #090909;
+    color: white;
+    border: 1px solid #444;
+    padding: 13px;
+    margin: 8px 0 15px;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+label {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.full {
+    width: 100%;
+}
+
+.notice {
+    color: #ffd36a;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#message {
+    padding: 12px;
+    border-radius: 7px;
+    margin-top: 12px;
+    display: none;
+    line-height: 1.6;
+}
+
+footer {
+    background: #111;
+    border-top: 1px solid #333;
+    padding: 25px 15px;
+    text-align: center;
+    color: #aaa;
+    line-height: 1.9;
+}
+
+footer strong {
+    color: var(--red);
+}
+
+@media (min-width: 700px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">💎 CUTTING DIAMOND</div>
+    <p>FREE FIRE TOP-UP STORE</p>
+</header>
+
+<nav>
+    <button class="nav-btn" onclick="goTo('home')">হোম</button>
+    <button class="nav-btn" onclick="goTo('diamonds')">ডায়মন্ড</button>
+    <button class="nav-btn" onclick="goTo('offers')">বিশেষ অফার</button>
+    <button class="nav-btn" onclick="goTo('payment')">পেমেন্ট</button>
+    <button class="nav-btn" onclick="goTo('account')">আমার অ্যাকাউন্ট</button>
+</nav>
+
+<section class="hero" id="home">
+    <h1>WELCOME TO <span>CUTTING DIAMOND</span></h1>
+    <p>
+        Free Fire Diamond Top-Up Store<br>
+        সহজ অর্ডার • ম্যানুয়াল পেমেন্ট • অর্ডার ট্র্যাকিং
+    </p>
+    <br>
+    <button onclick="goTo('diamonds')">💎 প্যাকেজ দেখুন</button>
+</section>
+
+<section class="section" id="diamonds">
+    <h2 class="section-title">💎 Diamond Packages</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="diamond">💎</div>
+            <h3>100 Diamonds</h3>
+            <p>মূল্য যাচাই করে নিন</p>
+            <button onclick="selectPackage('100 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="diamond">💎</div>
+            <h3>310 Diamonds</h3>
+            <p>মূল্য যাচাই করে নিন</p>
+            <button onclick="selectPackage('310 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="diamond">💎</div>
+            <h3>520 Diamonds</h3>
+            <p>মূল্য যাচাই করে নিন</p>
+            <button onclick="selectPackage('520 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="diamond">💎</div>
+            <h3>1060 Diamonds</h3>
+            <p>মূল্য যাচাই করে নিন</p>
+            <button onclick="selectPackage('1060 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+    </div>
+
+    <p class="notice">
+        নোট: উপরের সাধারণ প্যাকেজগুলোর দাম এখনো নির্ধারণ করা হয়নি।
+        অর্ডার নেওয়ার আগে সঠিক মূল্য সেট করতে হবে।
+    </p>
+</section>
+
+<section class="section" id="offers">
+    <h2 class="section-title">🔥 CUTTING DIAMOND OFFERS</h2>
+
+    <div class="grid">
+
+        <div class="card offer">
+            <span class="badge">SPECIAL OFFER</span>
+            <div class="diamond">💎</div>
+            <h3>10,000 Diamonds</h3>
+            <div class="price">৳ 1,000</div>
+            <button onclick="selectPackage('Special Offer: 10000 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card offer">
+            <span class="badge">SPECIAL OFFER</span>
+            <div class="diamond">💎</div>
+            <h3>50,000 Diamonds</h3>
+            <div class="price">৳ 2,000</div>
+            <button onclick="selectPackage('Special Offer: 50000 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card offer">
+            <span class="badge">SPECIAL OFFER</span>
+            <div class="diamond">💎</div>
+            <h3>25,000 Diamonds</h3>
+            <div class="price">৳ 15,000</div>
+            <button onclick="selectPackage('Special Offer: 25000 Diamonds')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card offer">
+            <span class="badge">MEMBERSHIP</span>
+            <div class="diamond">🎫</div>
+            <h3>5 Weekly Membership</h3>
+            <div class="price">৳ 500</div>
+            <button onclick="selectPackage('5 Weekly Membership')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="card offer">
+            <span class="badge">MEMBERSHIP</span>
+            <div class="diamond">🎫</div>
+            <h3>5 Monthly Membership</h3>
+            <div class="price">৳ 15,000</div>
+            <button onclick="selectPackage('5 Monthly Membership')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+    </div>
+
+    <p class="notice">
+        সতর্কতা: অফারগুলোর মূল্য ও ডায়মন্ডের পরিমাণ প্রকাশের আগে
+        সরবরাহকারীর কাছ থেকে নিশ্চিত করে নেবেন।
+    </p>
+</section>
+
+<section class="section" id="payment">
+    <h2 class="section-title">💳 Payment & Order</h2>
+
+    <div class="card">
+        <p>📱 bKash / Nagad</p>
+        <div class="price">01997731007</div>
+        <p>ম্যানুয়াল পেমেন্ট</p>
+        <p class="notice">
+            পেমেন্ট করার আগে নম্বর ও অ্যাকাউন্টের ধরন যাচাই করুন।
+            অর্ডার নিশ্চিত না করে টাকা পাঠাবেন না।
+        </p>
+    </div>
+
+    <form id="orderForm">
+        <label>Free Fire Player ID</label>
+        <input id="playerId" required
+               inputmode="numeric"
+               placeholder="তোমার Player ID লিখুন">
+
+        <label>প্যাকেজ নির্বাচন</label>
+        <select id="package" required>
+            <option value="">প্যাকেজ নির্বাচন করুন</option>
+            <option>100 Diamonds</option>
+            <option>310 Diamonds</option>
+            <option>520 Diamonds</option>
+            <option>1060 Diamonds</option>
+            <option>Special Offer: 10000 Diamonds</option>
+            <option>Special Offer: 50000 Diamonds</option>
+            <option>Special Offer: 25000 Diamonds</option>
+            <option>5 Weekly Membership</option>
+            <option>5 Monthly Membership</option>
+        </select>
+
+        <label>পেমেন্ট পদ্ধতি</label>
+        <select id="method" required>
+            <option value="">পদ্ধতি নির্বাচন করুন</option>
+            <option>bKash</option>
+            <option>Nagad</option>
+        </select>
+
+        <label>যে নম্বর থেকে টাকা পাঠিয়েছেন</label>
+        <input id="sender" inputmode="tel" required
+               placeholder="আপনার পেমেন্ট নম্বর">
+
+        <label>Transaction ID</label>
+        <input id="trx" required
+               placeholder="Transaction ID লিখুন">
+
+        <button class="full" type="submit">
+            অর্ডার জমা দিন
+        </button>
+
+        <div id="message"></div>
+
+        <p class="notice">
+            এই ডেমো ফর্ম এখনো ডেটাবেসে অর্ডার সংরক্ষণ করে না।
+            ব্যাকএন্ড যুক্ত না হওয়া পর্যন্ত এখানে বাস্তব পেমেন্ট
+            বা অর্ডার জমা দেবেন না।
+        </p>
+    </form>
+</section>
+
+<section class="section" id="account">
+    <h2 class="section-title">👤 My Account</h2>
+
+    <div class="card">
+        <p>অ্যাকাউন্ট ও অর্ডার ব্যবস্থাপনা</p>
+        <br>
+        <button onclick="showLoginNotice()">
+            Login / Register
+        </button>
+
+        <p class="notice">
+            নিরাপদ Login, Register ও অর্ডারের ইতিহাস চালু করতে
+            Supabase Authentication ও Database সংযুক্ত করতে হবে।
+        </p>
+    </div>
+</section>
+
+<footer>
+    <strong>💎 CUTTING DIAMOND</strong>
+    <p>Free Fire Top-Up Store</p>
+    <p>Payment: bKash & Nagad</p>
+    <p>Contact: 01997731007</p>
+    <p>© 2026 CUTTING DIAMOND</p>
+</footer>
+
+<script>
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function selectPackage(name) {
+    document.getElementById("package").value = name;
+    goTo("payment");
+}
+
+function showLoginNotice() {
+    alert(
+        "Login/Register চালু করতে Supabase Authentication " +
+        "সেটআপ করতে হবে।"
+    );
+}
+
+document.getElementById("orderForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        const msg = document.getElementById("message");
+
+        msg.style.display = "block";
+        msg.style.background = "#332500";
+        msg.style.color = "#ffe08a";
+
+        msg.textContent =
+            "এটি শুধু ডিজাইন ডেমো। অর্ডার এখনো জমা হয়নি। " +
+            "নিরাপদ ডেটাবেস ও পেমেন্ট যাচাই ব্যবস্থা যুক্ত করার " +
+            "পরেই বাস্তব অর্ডার চালু হবে।";
+    }
+);
+</script>
+
+</body>
+</html>
